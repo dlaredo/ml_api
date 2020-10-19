@@ -1,6 +1,8 @@
 import sys
 sys.path.append('.')
 
+print('creando app')
+
 import pathlib
 from flask import Flask
 from web_app.core import app_create
