@@ -52,7 +52,7 @@ def predict():
 
 
 @bp.route("/queryModels/")
-def predict():
+def queryModels():
 
     models = [key for key in app.config['ml_models']]
 
