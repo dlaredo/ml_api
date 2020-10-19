@@ -23,21 +23,23 @@ def config_app(app_root_path, test_config=None):
     #App logger
     app_logger = logging.getLogger('app_logger')
     app_logger.setLevel(logging.INFO)
-    app_fh = logging.FileHandler('web_app/LogFiles/web_app.log')
+    app_fh = logging.FileHandler(str(app_root_path) + '/LogFiles/web_app.log')
     app_formatter = logging.Formatter(fmt='%(levelname)s:%(threadName)s:%(asctime)s:%(filename)s:%(funcName)s:%(message)s',
                                     datefmt='%m/%d/%Y %H:%M:%S')
     app_fh.setFormatter(app_formatter)
     app_logger.addHandler(app_fh)
 
     #STDOUT/STDERR logger
+    """
     root_logger = logging.getLogger('ROOT_LOGGER')
     root_logger.setLevel(logging.INFO)
-    handler = logging.FileHandler("web_app/LogFiles/out.log")
+    handler = logging.FileHandler(str(app_root_path) + '/LogFiles/web_app.log')
     formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(name)s:%(message)s')
     handler.setFormatter(formatter)
     root_logger.addHandler(handler)
     sys.stderr.write = auxiliary.write_to_log_error
     sys.stdout.write = auxiliary.write_to_log_info
+    """
 
     #Load models
     try:
