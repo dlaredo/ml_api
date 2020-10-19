@@ -11,8 +11,8 @@ from web_app.auxiliary import exceptions
 def load_model(model_spec):
     """Given a model and its version, load it"""
 
-    models_repo = r"/Users/davidlaredorazo/Documents/Projects/Rappi Challenge/models_and_data"
-    #app_path = r"/usr/src/web_app"
+    #models_repo = r"/Users/davidlaredorazo/Documents/Projects/Rappi Challenge/models_and_data"
+    models_repo = r"/models_and_data"
 
     model = None
 
