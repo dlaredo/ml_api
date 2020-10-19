@@ -51,6 +51,14 @@ def predict():
     return jsonify({'data':results})
 
 
+@bp.route("/queryModels/")
+def predict():
+
+    models = [key for key in app.config['ml_models']]
+
+    return jsonify({'Loaded models':models})
+
+
 def data_transform(data):
     """Transform the incoming data in a format suitable for the ml model"""
 
