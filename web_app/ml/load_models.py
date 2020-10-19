@@ -61,6 +61,9 @@ def load_ml_models(app_root):
         with open(app_root / 'models_list.json', 'r') as fp:
             models_list = json.load(fp)
 
+        print("Lets load this models")
+        print(models_list)
+
     except Exception as e:
 
         app_logger.error("Could not open models list file.")

@@ -30,6 +30,7 @@ def config_app(app_root_path, test_config=None):
     app_logger.addHandler(app_fh)
 
     #STDOUT/STDERR logger
+    """
     root_logger = logging.getLogger('ROOT_LOGGER')
     root_logger.setLevel(logging.INFO)
     handler = logging.FileHandler(str(app_root_path) + '/LogFiles/web_app.log')
@@ -38,6 +39,7 @@ def config_app(app_root_path, test_config=None):
     root_logger.addHandler(handler)
     sys.stderr.write = auxiliary.write_to_log_error
     sys.stdout.write = auxiliary.write_to_log_info
+    """
 
     #Load models
     try:
