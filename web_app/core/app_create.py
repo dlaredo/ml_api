@@ -30,7 +30,6 @@ def config_app(app_root_path, test_config=None):
     app_logger.addHandler(app_fh)
 
     #STDOUT/STDERR logger
-    """
     root_logger = logging.getLogger('ROOT_LOGGER')
     root_logger.setLevel(logging.INFO)
     handler = logging.FileHandler(str(app_root_path) + '/LogFiles/web_app.log')
@@ -39,11 +38,12 @@ def config_app(app_root_path, test_config=None):
     root_logger.addHandler(handler)
     sys.stderr.write = auxiliary.write_to_log_error
     sys.stdout.write = auxiliary.write_to_log_info
-    """
 
     #Load models
     try:
         models = load_ml.load_ml_models(app.config['app_root'])
+        app_logger.info("Loaded the following ML models")
+        app_logger.info(models)
     except Exception as e:
         app_logger.error("Could not initialize models")
         app_logger.error(traceback.format_exc())
