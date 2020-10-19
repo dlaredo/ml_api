@@ -58,14 +58,14 @@ def load_ml_models(app_root):
 
     try:
 
-        print("Loading models from")
-        print(app_root / 'models_list.json')
+        app_logger.error("Loading models from")
+        app_logger.error(app_root / 'models_list.json')
 
         with open(app_root / 'models_list.json', 'r') as fp:
             models_list = json.load(fp)
 
-        print("Lets load this models")
-        print(models_list)
+        app_logger.error("Loading models from")
+        app_logger.error(app_root / 'models_list.json')
 
     except Exception as e:
 
