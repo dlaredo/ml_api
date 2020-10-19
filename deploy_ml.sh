@@ -3,7 +3,7 @@ git pull
 cd ..
 
 mv ./models_list.json /app/web_app/models_list.json
-systemctl reload nginx
+touch /app/web_app/main.py
 
 if [ $? -eq 0 ]; then
   echo "Model successfully deployed"
