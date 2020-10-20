@@ -69,6 +69,7 @@ def load_ml_models(app_root):
     except Exception as e:
 
         app_logger.error("Could not open models list file.")
+        app_logger.error(traceback.format_exc())
         print("Could not open models list file. Check app_log file")
 
     for key in models_list:
